@@ -1,0 +1,49 @@
+<div class="modal fade" id="logModal" tabindex="-1" aria-labelledby=loggModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background: #1d3a41; color: #ff006a; border-radius: 10px;">
+            <form method="post" action="/login/">
+                <center>
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="regModalLabel">Вход</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </center>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="1" class="form-label" style="color: #d1f8bd">
+                            <h3>
+                                <b>
+                                    Email:
+                                </b>
+                            </h3>
+                        </label>
+                        <input type="text" name="email" maxlength="200" class="form-control" id="1"
+                               style="background: #1d3a41; border-color: #0a2126;
+                                            border-width: 6px; border-radius: 10px; font-size: 24px; color: #d1f8bd">
+                    </div>
+                    <div class="mb-3">
+                        <label for="2" class="form-label" style="color: #d1f8bd">
+                            <h3>
+                                <b>
+                                    Пароль:
+                                </b>
+                            </h3>
+                        </label>
+                        <input type="password" name="password" maxlength="1000" class="form-control" id="2"
+                               style="background: #1d3a41; border-color: #0a2126;
+                                            border-width: 6px; border-radius: 10px; font-size: 24px; color: #d1f8bd">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px" class="btn btn-primary">
+                        <h5>
+
+                            Войти
+                        </h5>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

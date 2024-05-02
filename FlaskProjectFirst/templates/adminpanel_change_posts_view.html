@@ -1,0 +1,118 @@
+<div class="modal fade" id="changeModalTitle{{ post.id }}" tabindex="-1" aria-labelledby=loggModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background: #323638; color: #ff006a; border-radius: 10px;">
+            <form method="get" action="/adminpanel/operations/changetitle/{{ post.id }}/">
+                <center>
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="changeModalTitleLabel">Изменение названия записи №{{ post.id }}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </center>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="1" class="form-label" style="color: #a9dc9f">
+                            <h3>
+                                <b>
+                                    Новое название:
+                                </b>
+                            </h3>
+                        </label>
+                        <input type="text" name="input" maxlength="100" class="form-control" id="1"
+                               style="background: #1d3a41; border-color: #0a2126;
+                                            border-width: 6px; border-radius: 10px; font-size: 24px; color: #eeb3ea">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px" class="btn btn-primary">
+                        <h5>
+
+                            Изменить
+                        </h5>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="changeModalAuthor{{ post.id }}" tabindex="-1" aria-labelledby=loggModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background: #323638; color: #ff006a; border-radius: 10px;">
+            <form method="get" action="/adminpanel/operations/changeauthor/{{ post.id }}/ ">
+                <center>
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="changeModalAuthorLabel">Изменение автора записи №{{ post.id }}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </center>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <h3>
+                            <label for="input" class="form-label" style="color: #bdf8f6">
+                                <h3>
+                                    <b>
+                                        Новый автор:
+                                    </b>
+                                </h3>
+                            </label>
+                            <select name="input" style="background: #775583; color: #a9dc9f; border-radius: 10px;">
+                                {% for author in authors %}
+                                    <option value="{{ author }}">{{ author }}</option>
+                                {% endfor %}
+                            </select>
+                        </h3>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px" class="btn btn-primary">
+                        <h5>
+
+                            Изменить
+                        </h5>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="changeModalText{{ post.id }}" tabindex="-1" aria-labelledby=loggModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background: #1d3a41; color: #ff006a; border-radius: 10px;">
+            <form method="get" action="/adminpanel/operations/changetext/{{ post.id }}/">
+                <center>
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="changeModalAuthorLabel">Изменение текста записи №{{ post.id }}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </center>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="1" class="form-label" style="color: #a9dc9f">
+                            <h3>
+                                <b>
+                                    Новый текст:
+                                </b>
+                            </h3>
+                        </label>
+                        <input type="text" name="input" maxlength="1000" class="form-control" id="1"
+                               style="background: #1d3a41; border-color: black;
+                                            border-width: 6px; border-radius: 10px; font-size: 24px; color: #d1f8bd">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px" class="btn btn-primary">
+                        <h5>
+
+                            Изменить
+                        </h5>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

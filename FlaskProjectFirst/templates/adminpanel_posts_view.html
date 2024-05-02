@@ -1,0 +1,113 @@
+{% extends "main_view.html" %}
+{% block menu %}
+    {% if status == 1 %}
+        <center>
+            <h1 style="color: black; text-align: center; font-size: 40px; margin-top: 1%"><b>Контроль записей</b></h1>
+            <div style="margin-top: 1%">
+                <a class="navbar-brand" href="/adminpanel/"
+                   style="color: black">
+                    <button type="button" class="btn btn-primary"
+                            style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                        <h3><b>Панель
+                            администратора</b></h3>
+                    </button>
+                </a>
+            </div>
+        </center>
+        {% for post in posts.items %}
+            <div class="container-sm" style="margin-top: 1%; margin-bottom: 1%">
+                <div class="row align-items-start">
+                    <div class="col">
+                        <div class="bg-image card shadow-1-strong"
+                             style="border-radius: 30px; border-width: 10px; border-color: #0a2126;background: #143036">
+                            <div class="card-body" align="justify">
+                                <h1 style="color: #ff006a"><b>{{ post.title }}</b></h1>
+                                <hr style="color: #eeb3ea; border-width: 6px;">
+                                <h2 style="color: #ff006a"> {{ post.text }}</h2>
+                                <h5 style="color: #ff006a"> Автор поста: <b style="color: #4cafac">{{ post.author }}</b>
+                                </h5>
+                                <h5 align="left" style="color: #ff006a"> Дата создания: <b
+                                        style="color: #eeb3ea">{{ post.datetime }}</b></h5>
+                                {% include 'adminpanel_change_posts_view.html' %}
+                                <center>
+                                    <a class="navbar-brand" style="color: #d1f8bd" href="#changeModalTitle{{ post.id }}"
+                                       data-bs-toggle="modal">
+                                        <button type="button" class="btn btn-primary"
+                                                style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                                            <h5><b>Изменить название</b></h5>
+                                        </button>
+                                    </a>
+                                    <a class="navbar-brand" style="color: #eeb3ea"
+                                       href="#changeModalAuthor{{ post.id }}"
+                                       data-bs-toggle="modal">
+                                        <button type="button" class="btn btn-primary"
+                                                style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                                            <h5><b>Изменить автора</b></h5>
+                                        </button>
+                                    </a>
+                                    <a class="navbar-brand" style="color: #eeb3ea" href="#changeModalText{{ post.id }}"
+                                       data-bs-toggle="modal">
+                                        <button type="button" class="btn btn-primary"
+                                                style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                                            <h5><b>Изменить текст</b></h5>
+                                        </button>
+                                    </a>
+                                    <a class="navbar-brand" href="/adminpanel/operations/deletepost/{{ post.id }}/"
+                                       style="color: black">
+                                        <button type="button" class="btn btn-primary"
+                                                style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                                            <h5><b>Удалить запись</b></h5>
+                                        </button>
+                                    </a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <center style="margin-bottom: 2%">
+            {% for page in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=1) %}
+                {% if page %}
+                    {% if posts.page == page %}
+                        <a class="navbar-brand" style="color: black">
+                            <button disabled type="button" class="btn btn-primary"
+                                    style="background: #28292d; color: #ff006a; border-color: black;
+                                             border-radius: 10px; border-width: 4px">
+                                <h5>{{ page }}</h5>
+                            </button>
+                        </a>
+                    {% else %}
+                        <a class="navbar-brand"
+                           href="?page={{ page }}"
+                           style="color: black">
+                            <button type="button" class="btn btn-primary"
+                                    style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                                <h5>{{ page }}</h5>
+                            </button>
+                        </a>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </center>
+    {% else %}
+        <center>
+            <h1 style="margin-top: 15%; color: black"><b>Вы не администратор!</b></h1>
+            <a class="navbar-brand" href="/"
+               style="color: black">
+                <button type="button" class="btn btn-primary"
+                        style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                    <h3><b>Главная
+                        страница</b></h3>
+                </button>
+            </a>
+        </center>
+    {% endif %}
+{% endblock menu %}

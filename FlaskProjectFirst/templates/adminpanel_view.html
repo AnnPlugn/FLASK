@@ -1,0 +1,49 @@
+{% extends "main_view.html" %}
+{% block menu %}
+    <center>
+        {% if status == 1 %}
+            <h1 style="color: black; text-align: center; font-size: 40px; margin-top: 10%;"><b>Панель администратора</b>
+            </h1>
+            <div style="margin-top: 3%;">
+                <a class="navbar-brand" href="posts/"
+                   style="color: black">
+                    <button type="button" class="btn btn-primary"
+                            style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                        <h3><b>Контроль записей</b></h3>
+                    </button>
+                </a>
+                <a class="navbar-brand" href="users/"
+                   style="color: black">
+                    <button type="button" class="btn btn-primary"
+                            style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                        <h3><b>Контроль пользователей</b></h3>
+                    </button>
+                </a>
+                <div style="margin-top: 3%">
+                    <a class="navbar-brand" href="/"
+                       style="color: black">
+                        <button type="button" class="btn btn-primary"
+                                style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                            <h3><b>Главная страница</b></h3>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <h1 style="margin-top: 15%; color: black"><b>Вы не администратор!</b></h1>
+            <div>
+                <a class="navbar-brand" href="/"
+                   style="color: black">
+                    <button type="button" class="btn btn-primary"
+                            style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                        <h3><b>Главная страница</b></h3>
+                    </button>
+                </a>
+            </div>
+        {% endif %}
+    </center>
+{% endblock menu %}

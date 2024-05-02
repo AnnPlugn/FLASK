@@ -1,0 +1,32 @@
+{% extends "main_view.html" %}
+{% block menu %}
+    <h1 style="color: black; text-align: center; font-size: 40px; margin-top: 1%"><b>Запись №{{ post[0].id }}</b>
+    </h1>
+    <div class="container-sm" style="margin-top: 1%; margin-bottom: 1%">
+        <div class="row align-items-start">
+            <div class="col">
+                <div class="bg-image card shadow-1-strong"
+                     style="border-radius: 30px;border-width: 10px;border-color: black;background: #181a1e">
+                    <div class="card-body" align="justify">
+                        <h1 style="color: #ff006a"><b>{{ post[0].title }}</b></h1>
+                        <hr style="color: #eeb3ea; border-width: 6px;">
+                        <h2 style="color: #ff006a"> {{ post[0].text }}</h2>
+                        <h5 style="color: #ff006a"> Автор поста: <b style="color: #4cafac">{{ post[0].author }}</b>
+                        </h5>
+                        <h5 align="left" style="color: #ff006a"> Дата создания: <b
+                                style="color: #df6dec">{{ post[0].datetime }}</b></h5>
+                        <div align="right">
+                            <a class="navbar-brand" href="/" style="color: black">
+                                <button type="button" class="btn btn-primary"
+                                        style="background: #28292d; color: #ff006a; border-color: black;
+                                         border-radius: 10px; border-width: 4px">
+                                    <h5>Назад</h5>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock menu %}
